@@ -1,5 +1,7 @@
 package nc.alright.service.user;
 
+import nc.alright.domain.user.JoinStatus;
+import nc.alright.domain.user.LoginStatus;
 import nc.alright.domain.user.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,6 +20,7 @@ class UserServiceTest {
     @Autowired
     private UserService userService;
 
+
     @BeforeEach
     void prepareTestData() {
         // 테스트 데이터를 미리 데이터베이스에 추가
@@ -35,6 +38,36 @@ class UserServiceTest {
         user2.setUserName("User 2");
         userService.createUser(user2);
     }
+
+
+
+    @Test
+    void joinUserDuplicate() {
+        User existingUser = new User();
+        existingUser.setUserEmail("user1@example.com");
+        existingUser.setUserPhoneNumber("1111111111");
+        existingUser.setPassword("password1");
+        existingUser.setUserName("User 1");
+
+        JoinStatus status = userService.join(existingUser);
+
+        assertEquals(JoinStatus.DUPLICATE, status);
+    }
+
+
+
+
+    @Test
+    void loginUser() {
+        String userEmail = "user1@example.com";
+        String userPassword = "password1";
+
+        LoginStatus status = userService.login(userEmail, userPassword);
+
+        assertEquals(LoginStatus.SUCCESS, status);
+    }
+
+
 
     @Test
     void createUser() {
@@ -113,46 +146,3 @@ class UserServiceTest {
     }
 
 }
-/*
-class UserServiceTest {
-
-
-    @Test
-    void createUser() {
-    }
-
-    @Test
-    void getUserById() {
-    }
-
-    @Test
-    void getAllUsers() {
-    }
-
-    @Test
-    void updateUser() {
-    }
-
-    @Test
-    void deleteUser() {
-    }
-
-    @Test
-    void getUserByEmail() {
-    }
-
-    @Test
-    void getUserByPhoneNumber() {
-    }
-
-    @Test
-    void getUsersByUserName() {
-    }
-
-    @Test
-    void getUsersByDepartment() {
-    }
-}
-
-
- */

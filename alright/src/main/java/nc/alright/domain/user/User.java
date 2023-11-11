@@ -13,10 +13,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
     private String userEmail;
-    private String userPhoneNumber;
     private String password;
-    private Date createTime;
     private String userName;
+    private String userPhoneNumber;
+    // private Date createTime;
+
 
 
     public User() {
@@ -54,13 +55,9 @@ public class User {
         this.password = password;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+    // public Date getCreateTime() {return createTime;}
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    //public void setCreateTime(Date createTime) {this.createTime = createTime;}
 
     public String getUserName() {
         return userName;

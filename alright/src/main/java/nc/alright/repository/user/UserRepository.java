@@ -3,6 +3,7 @@ package nc.alright.repository.user;
 import nc.alright.domain.user.User;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserRepository {
     // 사용자를 생성하는 메서드
@@ -29,6 +30,9 @@ public interface UserRepository {
     // 사용자 이름을 사용하여 사용자를 조회하는 메서드
     List<User> getUsersByUserName(String userName);
 
+    Optional<User> findByEmail(String userEmail);
+
+    User save(User User);
 
 }
 
