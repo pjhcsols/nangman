@@ -25,7 +25,7 @@ public class JpaUserRepository implements UserRepository {
     }
 
     @Override
-    public User getUserById(String userId) {
+    public User getUserById(Long userId) {
         return entityManager.find(User.class, userId);
     }
 
@@ -38,7 +38,7 @@ public class JpaUserRepository implements UserRepository {
 
     @Override
     @Transactional
-    public User updateUser(String userId, User updatedUser) {
+    public User updateUser(Long userId, User updatedUser) {
         User existingUser = entityManager.find(User.class, userId);
         if (existingUser != null) {
             // 업데이트된 정보로 사용자 업데이트
@@ -54,7 +54,7 @@ public class JpaUserRepository implements UserRepository {
 
     @Override
     @Transactional
-    public void deleteUser(String userId) {
+    public void deleteUser(Long userId) {
         User user = entityManager.find(User.class, userId);
         if (user != null) {
             entityManager.remove(user);
@@ -85,11 +85,6 @@ public class JpaUserRepository implements UserRepository {
         return query.getResultList();
     }
 
-    @Override
-    public List<User> getUsersByDepartment(String department) {
-        String jpql = "SELECT u FROM User u WHERE u.department = :department";
-        TypedQuery<User> query = entityManager.createQuery(jpql, User.class);
-        query.setParameter("department", department);
-        return query.getResultList();
-    }
+
+
 }

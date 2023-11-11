@@ -21,7 +21,7 @@ public class UserService {
         return userRepository.createUser(user);
     }
 
-    public User getUserById(String userId) {
+    public User getUserById(Long userId) {
         return userRepository.getUserById(userId);
     }
 
@@ -29,11 +29,11 @@ public class UserService {
         return userRepository.getAllUsers();
     }
 
-    public User updateUser(String userId, User updatedUser) {
+    public User updateUser(Long userId, User updatedUser) {
         return userRepository.updateUser(userId, updatedUser);
     }
 
-    public void deleteUser(String userId) {
+    public void deleteUser(Long userId) {
         userRepository.deleteUser(userId);
     }
 
@@ -49,7 +49,5 @@ public class UserService {
         return userRepository.getUsersByUserName(userName);
     }
 
-    public List<User> getUsersByDepartment(String department) {
-        return userRepository.getUsersByDepartment(department);
-    }
+
 }
