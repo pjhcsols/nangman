@@ -2,7 +2,7 @@ import {useState } from 'react';
 // import axios from 'axios';
 import { useHistory} from 'react-router';
 
-const LoginPage = () => {
+const UserLoginPage = () => {
     // const history = useHistory();
     // const [pwd,setPwd] = useState('');
 
@@ -30,13 +30,26 @@ const LoginPage = () => {
         <div style = {{padding: '100px'}}>
             <div className="container d-flex align-items-center justify-content-center vh-50">
                 <div className="d-flex flex-column align-items-center">
-                    <h1>로그인</h1>
+                    <h1>일반 사용자 로그인</h1>
                     <div>
+                        <div className="mb-3">
+                            <label className="from-label">이메일을 입력하세요</label>
+                                <div>
+                                <input
+                                    className="login-email"
+                                    type="text"
+                                    // value={pwd}
+                                    // onChange={(e) => {
+                                    //     setPwd(e.target.value);
+                                    // }}
+                                />
+                                </div>
+                        </div>
                         <div className="mb-3">
                             <label className="from-label">비밀번호를 입력하세요</label>
                                 <div>
                                 <input
-                                    className="form-login"
+                                    className="login-pwd"
                                     type="password"
                                     // value={pwd}
                                     // onChange={(e) => {
@@ -58,4 +71,4 @@ const LoginPage = () => {
         </div>
     );
 }
-export default LoginPage;
+export default UserLoginPage;

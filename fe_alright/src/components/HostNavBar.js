@@ -1,6 +1,6 @@
 import {Link,NavLink} from 'react-router-dom';
 
-const NavBar = () => {
+const HostNavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'linear-gradient(to bottom, #FFB21D, #ffffff)' }}>
             <div className="container">
@@ -19,25 +19,25 @@ const NavBar = () => {
                         activeClassName = "active"
                         className="nav-link" 
                         aria-current="page" 
-                        to="/join">
-                        회원가입</NavLink>
+                        to="/host/main/post">
+                        키즈존 등록</NavLink>
                     </li>
 
-                    <li className="nav-item me-2">
+                    {/* <li className="nav-item me-2">
                         <NavLink 
                         activeClassName = "active"
                         className="nav-link" 
                         aria-current="page" 
                         to="/mode">
                         로그인</NavLink>
-                    </li>
-                    <li className="search-container mt-1">
+                    </li> */}
+                    {/* <li className="search-container mt-1">
                         <input type="text" className="search-input" placeholder="검색어를 입력하세요" />
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>
     );
 };
 
-export default NavBar;
+export default HostNavBar;
