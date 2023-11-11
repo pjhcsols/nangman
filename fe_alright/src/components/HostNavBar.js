@@ -2,7 +2,14 @@ import {Link,NavLink} from 'react-router-dom';
 
 const HostNavBar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{ background: 'linear-gradient(to bottom, #FFB21D, #ffffff)' }}>
+        <nav className="navbar navbar-expand-lg navbar-dark"
+        style={{
+            background: '#ffffff',
+            boxShadow: 'rgba(0, 0, 0, 0.15) 0px 1px 4px',
+            zIndex: '100',
+            height: '100px'
+            }}
+        >
             <div className="container">
                 <Link className="navbar-brand mt-1" to="/">
                     <button type="button" style={{ background: 'transparent', border: 'none'}}>
