@@ -1,6 +1,10 @@
+import JoinMode from "../components/JoinMode";
+
 const JoinPage = () => {
     return (
-        <div>Join Page</div>
+        <div>
+            <JoinMode />
+        </div>
     )
 }
 

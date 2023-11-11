@@ -1,6 +1,8 @@
 import {useState } from 'react';
 // import axios from 'axios';
 import { useHistory} from 'react-router';
+import NavBar from '../components/NavBar';
+import LoginForm from '../components/LoginForm';
 
 const UserLoginPage = () => {
     // const history = useHistory();
@@ -27,47 +29,16 @@ const UserLoginPage = () => {
     // };
       
     return (
+        <div>
+        <NavBar />
         <div style = {{padding: '100px'}}>
             <div className="container d-flex align-items-center justify-content-center vh-50">
                 <div className="d-flex flex-column align-items-center">
                     <h1>일반 사용자 로그인</h1>
-                    <div>
-                        <div className="mb-3">
-                            <label className="from-label">이메일을 입력하세요</label>
-                                <div>
-                                <input
-                                    className="login-email"
-                                    type="text"
-                                    // value={pwd}
-                                    // onChange={(e) => {
-                                    //     setPwd(e.target.value);
-                                    // }}
-                                />
-                                </div>
-                        </div>
-                        <div className="mb-3">
-                            <label className="from-label">비밀번호를 입력하세요</label>
-                                <div>
-                                <input
-                                    className="login-pwd"
-                                    type="password"
-                                    // value={pwd}
-                                    // onChange={(e) => {
-                                    //     setPwd(e.target.value);
-                                    // }}
-                                />
-                                </div>
-                        </div>
-                    </div>
-                    
-                    <button
-                        className="btn btn-primary ms-2"
-                        // onClick ={onSubmit}
-                        >
-                        입력 완료
-                    </button>
+                    <LoginForm />
                 </div>
             </div>
+        </div>
         </div>
     );
 }

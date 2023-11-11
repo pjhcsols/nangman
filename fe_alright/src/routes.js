@@ -1,18 +1,28 @@
 import HostLoginPage from "./pages/HostLoginPage";
 import HostPage from "./pages/HostPage";
-import HostPost from "./pages/HostPost";
-import JoinPage from "./pages/JoinPage";
-import LoginMode from "./pages/LoginMode";
+import LoginMode from "./components/LoginMode";
 import UserLoginPage from "./pages/UserLoginPage";
+import HostPostPage from "./pages/HostPostPage";
+import JoinMode from "./components/JoinMode";
+import UserJoinPage from "./pages/UserJoinPage";
+import HostJoinPage from "./pages/HostJoinPage";
 
 const routes = [
     {
-        path : '/mode',
+        path : '/lmode',
         component : LoginMode
     },
     {
-        path : '/join',
-        component : JoinPage
+        path : '/jmode',
+        component : JoinMode
+    },
+    {
+        path : '/jmode/user',
+        component : UserJoinPage
+    },
+    {
+        path : '/jmode/host',
+        component : HostJoinPage
     },
     {
         path : '/user/login',
@@ -28,7 +38,7 @@ const routes = [
     },
     {
         path : '/host/main/post',
-        component : HostPost
+        component : HostPostPage
     }
 ]
 

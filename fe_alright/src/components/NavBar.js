@@ -9,6 +9,8 @@ const NavBar = () => {
                         <img src={'/img/logo.png'} alt="" height="65" width="65"/>   
                     </button>
                 </Link>
+                <span style={{ fontWeight: 'bold' }}>우리 아이를 위한 공간 찾기, 얼라잇</span>
+
                 <ul
                 style = {{
                     flexDirection: 'row'
@@ -19,7 +21,7 @@ const NavBar = () => {
                         activeClassName = "active"
                         className="nav-link" 
                         aria-current="page" 
-                        to="/join">
+                        to="/jmode">
                         회원가입</NavLink>
                     </li>
 
@@ -28,7 +30,7 @@ const NavBar = () => {
                         activeClassName = "active"
                         className="nav-link" 
                         aria-current="page" 
-                        to="/mode">
+                        to="/lmode">
                         로그인</NavLink>
                     </li>
                     <li className="search-container mt-1">

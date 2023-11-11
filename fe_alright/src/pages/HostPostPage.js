@@ -1,9 +1,9 @@
 import PostForm from "../components/PostForm";
 
-const HostPost = () => {
+const HostPostPage = () => {
     return (
         <PostForm />
     )
 }
 
-export default HostPost;
+export default HostPostPage;

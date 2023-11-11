@@ -15,12 +15,12 @@ const HostNavBar = () => {
                 }} 
                 className="navbar-nav">
                     <li className="nav-item me-2">
-                        <NavLink 
-                        activeClassName = "active"
+                        <Link 
                         className="nav-link" 
-                        aria-current="page" 
                         to="/host/main/post">
-                        키즈존 등록</NavLink>
+                            <button className = "btn btn-danger">
+                        키즈존 등록
+                        </button></Link>
                     </li>
 
                     {/* <li className="nav-item me-2">

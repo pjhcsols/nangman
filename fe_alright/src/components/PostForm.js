@@ -127,12 +127,13 @@ const PostForm = ({editing}) => {
               </label> */}
             </div>
 
-          {/* <button 
-          onClick = {onSubmit}
+          <button 
+          //onClick = {onSubmit}
           className="btn btn-primary"
-          disabled = {editing && !isEdited()}>
-            {editing ? 'Edit':'Post'}
-          </button> */}
+          /*disabled = {editing && !isEdited()}*/>
+            {/* {editing ? 'Edit':'Post'} */}
+            Post
+          </button>
 
           <button 
           className="btn btn-danger ms-2"
