@@ -13,6 +13,7 @@ public class JwtUtil {
         return Jwts.parser().setSigningKey(secretKey.getBytes()).parseClaimsJws(token)
                 .getBody().get("userName", String.class);
     }
+
     /*
     public static String getUserType(String token, String secretKey){
         return Jwts.parser().setSigningKey(secretKey.getBytes()).parseClaimsJws(token)
@@ -20,6 +21,7 @@ public class JwtUtil {
     }
 
      */
+
     public static boolean isExpired(String token, String secretKey) {
         return Jwts.parser().setSigningKey(secretKey.getBytes()).parseClaimsJws(token)
                 .getBody().getExpiration().before(new Date());

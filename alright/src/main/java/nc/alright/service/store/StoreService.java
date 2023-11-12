@@ -4,10 +4,12 @@ import nc.alright.domain.store.Store;
 import nc.alright.repository.store.JpaStoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class StoreService {
     private final JpaStoreRepository jpaStoreRepository;
 
