@@ -65,70 +65,70 @@ const InitMap = () => {
         setAll(e.target.checked)
     }
 
-    // useEffect(() => {
-    //     console.log(yes,no,com,all);
-    //     let categoryId;
+    useEffect(() => {
+        console.log(yes,no,com,all);
+        let categoryId;
 
-    //     if (no === true) {
-    //         categoryId = '1';
-    //         axios.get(`http://server:8080/categories/${categoryId}/stores`)
-    //             .then(response => {
-    //             // 서버 응답 처리
-    //             console.log('서버 응답:', response.data);
-    //             // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
-    //             })
-    //             .catch(error => {
-    //             // 오류 처리
-    //             console.error('서버 요청 오류:', error);
-    //             });
-    //     }
-    //     if (yes === true) {
-    //         categoryId = '2';
-    //         axios.get(`http://server:8080/categories/${categoryId}/stores`)
-    //             .then(response => {
-    //             console.log('서버 응답:', response.data); // 서버 응답 처리
-    //             })
-    //             .catch(error => {
-    //             console.error('서버 요청 오류:', error); // 오류 처리
-    //             });
-    //     }
-    //     if (com === true) {
-    //         categoryId = '3';
-    //         axios.get(`http://server:8080/categories/${categoryId}/stores`)
-    //             .then(response => {
-    //             // 서버 응답 처리
-    //             console.log('서버 응답:', response.data);
-    //             // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
-    //             })
-    //             .catch(error => {
-    //             // 오류 처리
-    //             console.error('서버 요청 오류:', error);
-    //             });
-    //     }
-    //     if (all === true) {
-    //         axios.get('http://172.20.10.204:8080/stores/allstore')
-    //             .then(response => {
-    //             positions = response.data.map(item => ({
-    //                 storeId : item.storedId,
-    //                 storeName : item.storeName,
-    //                 storePhoneNumber : item.storePhoneNumber,
-    //                 storeAddress : item.storeAddress,
-    //                 storeLatitude : parseFloat(item.storeLatitude),
-    //                 storeLongitude : parseFloat(item.storeLongitude),
-    //                 storeCategoryId : item.storeCategoryId,
-    //                 storeImage : item.storeImage,
-    //                 lat: parseFloat(item.storeLatitude),
-    //                 lng: parseFloat(item.storeLongitude)
-    //             }))
-    //             console.log('서버 응답:', response.data);
-    //             // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
-    //             })
-    //             .catch(error => {
-    //             // 오류 처리
-    //             console.error('서버 요청 오류:', error);
-    //             });
-    //     }
-    // }, [yes,no,com,all]);
+        if (no === true) {
+            categoryId = '1';
+            axios.get(`http://server:8080/categories/${categoryId}/stores`)
+                .then(response => {
+                // 서버 응답 처리
+                console.log('서버 응답:', response.data);
+                // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
+                })
+                .catch(error => {
+                // 오류 처리
+                console.error('서버 요청 오류:', error);
+                });
+        }
+        if (yes === true) {
+            categoryId = '2';
+            axios.get(`http://server:8080/categories/${categoryId}/stores`)
+                .then(response => {
+                console.log('서버 응답:', response.data); // 서버 응답 처리
+                })
+                .catch(error => {
+                console.error('서버 요청 오류:', error); // 오류 처리
+                });
+        }
+        if (com === true) {
+            categoryId = '3';
+            axios.get(`http://server:8080/categories/${categoryId}/stores`)
+                .then(response => {
+                // 서버 응답 처리
+                console.log('서버 응답:', response.data);
+                // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
+                })
+                .catch(error => {
+                // 오류 처리
+                console.error('서버 요청 오류:', error);
+                });
+        }
+        if (all === true) {
+            axios.get('http://172.20.10.204:8080/stores/allstore')
+                .then(response => {
+                positions = response.data.map(item => ({
+                    storeId : item.storedId,
+                    storeName : item.storeName,
+                    storePhoneNumber : item.storePhoneNumber,
+                    storeAddress : item.storeAddress,
+                    storeLatitude : parseFloat(item.storeLatitude),
+                    storeLongitude : parseFloat(item.storeLongitude),
+                    storeCategoryId : item.storeCategoryId,
+                    storeImage : item.storeImage,
+                    lat: parseFloat(item.storeLatitude),
+                    lng: parseFloat(item.storeLongitude)
+                }))
+                console.log('서버 응답:', response.data);
+                // 원하는 로직을 구현하고 필요한 경우 상태를 업데이트할 수 있습니다.
+                })
+                .catch(error => {
+                // 오류 처리
+                console.error('서버 요청 오류:', error);
+                });
+        }
+    }, [yes,no,com,all]);
 
     useEffect(() => {
         // positions 배열이 변경될 때마다 실행되는 콜백 함수
