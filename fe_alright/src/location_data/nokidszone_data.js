@@ -1,4 +1,4 @@
-const nokidszone =[
+const nokidszone_data =[
     {
         title : '인문대'  ,
         latlng: {lat:35.891132 , lng:128.610721}
@@ -15,5 +15,5 @@ const nokidszone =[
 
 ]
 
-export default nokidszone
+export default nokidszone_data
 

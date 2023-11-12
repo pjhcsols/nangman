@@ -1,4 +1,4 @@
-const kidszone =[
+const kidszone_data =[
     {
         title : '복방'  ,
         latlng: {lat:35.888059 , lng:128.611379}
@@ -12,8 +12,8 @@ const kidszone =[
         latlng: {lat:35.887981 , lng:128.605109}
     },  
 
-
+ 
 ]
 
-export default kidszone
+export default kidszone_data
 

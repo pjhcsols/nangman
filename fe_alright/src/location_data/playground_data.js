@@ -1,4 +1,4 @@
-const playground =[
+const playground_data =[
     {
         title : '테니스장'  ,
         latlng: {lat:35.888856 , lng:128.611090}
@@ -15,5 +15,5 @@ const playground =[
 
 ]
 
-export default playground
+export default playground_data
 
