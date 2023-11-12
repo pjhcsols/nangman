@@ -15,6 +15,18 @@ public class JpaStoreRepository implements StoreRepository{
     @PersistenceContext
     private EntityManager entityManager;
 
+    /*
+    @PostConstruct
+    public void init() {
+        try {
+            // 초기 카테고리 데이터를 추가합니다.
+            createStore(new Category(1L, "노키즈존"));
+            createCategory(new Category(2L, "예스키즈존"));
+        } catch (Exception e) {
+            e.printStackTrace(); // 예외 발생 시 콘솔에 출력
+        }
+    }
+*/
     @Override
     @Transactional
     public Store createStore(Store store) {

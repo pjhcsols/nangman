@@ -18,7 +18,8 @@ public class Store {
     private String storeAddress;
     private float storeLatitude;
     private float storeLongitude;
-    //여기 스토어 카테고리 추가
+    //private Long categoryId;여기 스토어 카테고리 추가
+    //또는 categoryName
     private String storeImage; //null값 허용
 
 
