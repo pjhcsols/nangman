@@ -3,7 +3,7 @@ package nc.alright.domain.category;
 public class Category {
     private Long categoryId; //productcategoryId와 연결해야됨
     private String categoryName;
-    // private Long parentCategoryId;
+    //private Long parentCategoryId;
 
     public Category(Long categoryId, String categoryName) {
         this.categoryId = categoryId;

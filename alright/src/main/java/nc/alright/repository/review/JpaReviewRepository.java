@@ -3,6 +3,7 @@ package nc.alright.repository.review;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
+import jakarta.transaction.Transactional;
 import nc.alright.domain.review.Review;
 import nc.alright.domain.store.Store;
 import nc.alright.domain.user.User;

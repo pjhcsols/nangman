@@ -3,6 +3,7 @@ package nc.alright.domain.store;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import nc.alright.domain.category.Category;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
@@ -18,7 +19,7 @@ public class Store {
     private String storeAddress;
     private float storeLatitude;
     private float storeLongitude;
-    //private Long categoryId;여기 스토어 카테고리 추가
+    private Long storeCategoryId;
     //또는 categoryName
     private String storeImage; //null값 허용
 
