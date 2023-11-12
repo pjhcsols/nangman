@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-const ExitBt = ({setIsVisible,content}) => {
+const ExitBt = ({setIsVisible,content,category,address}) => {
     return (
         <div style={{ minWidth: "150px" }}>
             <img
@@ -16,7 +16,16 @@ const ExitBt = ({setIsVisible,content}) => {
               }}
               onClick={() => setIsVisible(false)}
             />
-            <div style={{ padding: "5px", color: "#000" }}>{content}</div>
+            <div style={{ padding: "5px", color: "#000",  }}>{content}<br/>
+              <a
+                style={{ color: "#000", fontSize: "12px" }}
+              >{address}
+              </a><br/>
+              <a
+                style={{ color: "#000", fontSize: "12px" }}
+              >{category}
+              </a>
+            </div>
         </div>
     )
 

@@ -8,7 +8,7 @@ import { MapInfoWindow } from 'react-kakao-maps-sdk';
 import { useMap } from 'react-kakao-maps-sdk';
 import kidszone_data from '../location_data/kidszone_data';
 import nokidszone_data from '../location_data/nokidszone_data';
-import playground_data from '../location_data/playground_data';
+import complex_data from '../location_data/complex_data';
 import ExitBt from './ExitBt';
 
 const InitMap = () => {
@@ -20,15 +20,21 @@ const InitMap = () => {
     }));
     const kidszone = kidszone_data.map(item => ({
         title: item.title,
-        latlng: item.latlng
+        latlng: item.latlng,
+        category: item.category,
+        address: item.address
     }));
     const nokidszone = nokidszone_data.map(item => ({
         title: item.title,
-        latlng: item.latlng
+        latlng: item.latlng,
+        category: item.category,
+        address: item.address
     }));
-    const playground = playground_data.map(item => ({
+    const complex = complex_data.map(item => ({
         title: item.title,
-        latlng: item.latlng
+        latlng: item.latlng,
+        category: item.category,
+        address: item.address
     }));
     
 
@@ -76,7 +82,7 @@ const InitMap = () => {
     }
     }, [])
 
-    const EventMarkerContainer = ({ position, content ,img}) => {
+    const EventMarkerContainer = ({ position, content ,img,category,address}) => {
         const map = useMap()
         const [isVisible, setIsVisible] = useState(false)
         return (
@@ -93,7 +99,7 @@ const InitMap = () => {
                 }, // 마커이미지의 크기입니다
             }}
           >
-            {isVisible && (<ExitBt setIsVisible={setIsVisible} content={content} />)}
+            {isVisible && (<ExitBt setIsVisible={setIsVisible} content={content} category={category} address={address} />)}
           </MapMarker>
         )
     }
@@ -118,35 +124,38 @@ const InitMap = () => {
             <EventMarkerContainer position={state.center} content={'현위치'} img={'/img/geo.png'} />
             
             
-            {kidszone.map((kidszone, index) => (
+            {kidszone.map((kidszone) => (
                 <EventMarkerContainer
                     key={`${kidszone.title}-${kidszone.latlng}`}
                     position={kidszone.latlng} // 마커를 표시할 위치                    
-                    title={kidszone.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                    content={<div>{kidszone.title}</div>}
+                    content={kidszone.title }
+                    address={kidszone.address}
+                    category={kidszone.category}
                     img={'/img/kids.png'}
                 />
                     
                 
             ))}
 
-            {nokidszone.map((nokidszone, index) => (
+            {nokidszone.map((nokidszone) => (
                 <EventMarkerContainer
                     key={`${nokidszone.title}-${nokidszone.latlng}`}
                     position={nokidszone.latlng} // 마커를 표시할 위치                    
-                    title={nokidszone.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                    content={<div>{nokidszone.title}</div>}
+                    content={nokidszone.title}
+                    address={nokidszone.address}
+                    category={nokidszone.category}
                     img={'/img/nokids.png'}
                     />
 
             ))}
 
-            {playground.map((playground, index) => (
+            {complex.map((complex) => (
                 <EventMarkerContainer
-                    key={`${playground.title}-${playground.latlng}`}
-                    position={playground.latlng} // 마커를 표시할 위치                    
-                    title={playground.title} // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                    content={<div>{playground.title}</div>}
+                    key={`${complex.title}-${complex.latlng}`}
+                    position={complex.latlng} // 마커를 표시할 위치                    
+                    content={complex.title}
+                    address={complex.address}
+                    category={complex.category}
                     img={'/img/com.png'}
                     />
             ))}
