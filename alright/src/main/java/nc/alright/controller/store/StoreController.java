@@ -18,7 +18,7 @@ public class StoreController {
         this.storeService = storeService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public Store createStore(@RequestBody Store store){
         return storeService.createStore(store);
     }
@@ -28,7 +28,7 @@ public class StoreController {
         return storeService.getStoreById(storeId);
     }
 
-    @GetMapping
+    @GetMapping("/allstore")
     public List<Store> getAllStore(){
         return storeService.getAllStore();
     }
