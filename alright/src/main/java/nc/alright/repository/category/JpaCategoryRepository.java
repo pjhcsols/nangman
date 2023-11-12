@@ -1,7 +1,9 @@
 package nc.alright.repository.category;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import nc.alright.domain.category.Category;
 import org.springframework.stereotype.Repository;
 
@@ -10,16 +12,22 @@ import java.util.List;
 
 
 @Repository
+@Transactional
 public class JpaCategoryRepository implements CategoryRepository {
     @PersistenceContext
     private EntityManager em;
-    public JpaCategoryRepository() {
-        // 초기 카테고리 데이터를 추가합니다.
-        createCategory(new Category(1L, "노키즈존"));
-        createCategory(new Category(2L, "예스키즈존"));
+/*
+    @PostConstruct
+    public void init() {
+        try {
+            // 초기 카테고리 데이터를 추가합니다.
+            createCategory(new Category(1L, "노키즈존"));
+            createCategory(new Category(2L, "예스키즈존"));
+        } catch (Exception e) {
+            e.printStackTrace(); // 예외 발생 시 콘솔에 출력
+        }
     }
-
-
+*/
     @Override
     public Category createCategory(Category category) {
         em.persist(category);
