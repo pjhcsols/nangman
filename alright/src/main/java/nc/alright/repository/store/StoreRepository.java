@@ -37,4 +37,6 @@ public interface StoreRepository {
     //주소를 이용하여 상점을 조회하는 메서드
     Store getStoreByAddress(String storeAddress);
 
+    //추가
+    List<Store> getStoreByCategoryId(int storeCategoryId);
 }

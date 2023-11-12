@@ -96,14 +96,7 @@ public class UserService {
         return LoginStatus.SUCCESS;
     }
 
-/*
-    private void validateDuplicateMember(User user) {
-        userRepository.findByEmail(user.getUserEmail()).ifPresent(existingUser -> {
-            throw new IllegalStateException("이미 존재하는 회원입니다.");
-        });
-    }
 
- */
     private void validateDuplicateMember(User user) {
         // 이미 존재하는 사용자인지 확인
         Optional<User> existingUser = userRepository.findByEmail(user.getUserEmail());

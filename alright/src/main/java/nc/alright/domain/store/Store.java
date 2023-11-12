@@ -19,7 +19,7 @@ public class Store {
     private String storeAddress;
     private float storeLatitude;
     private float storeLongitude;
-    private Long storeCategoryId;
+    private int storeCategoryId;
     //또는 categoryName
     private String storeImage; //null값 허용
 

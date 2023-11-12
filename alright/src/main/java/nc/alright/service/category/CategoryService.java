@@ -26,17 +26,17 @@ public class CategoryService {
     public Category createCategory(Category category) {
         return categoryRepository.createCategory(category);
     }
-
-    public List<Store> getStoreByCategory(Long categoryId) {
-        Category category = categoryRepository.getCategoryById(categoryId);
+/*
+    public List<Store> getStoreByCategory(Long storeCategoryId) {
+        Category category = categoryRepository.getCategoryById(storeCategoryId);
         if (category != null) {
-            if ("노키즈존".equals(category.getCategoryName())) {
-                return storeRepository.getStoreByName("노키즈존");
-            } else if ("예스키즈존".equals(category.getCategoryName())) {
-                return storeRepository.getStoreByName("예스키즈존");
-            }
+            Long categoryValue = category.getCategoryId();
+            return storeRepository.getStoreByCategoryId(categoryValue);
+        } else {
+            // 지정된 categoryId에 해당하는 카테고리가 없는 경우 빈 목록 반환
+            return new ArrayList<>();
         }
-        //return new ArrayList<>(); // 노키즈존 또는 예스키즈존이 없는 경우 빈 목록 반환
-        return null;
     }
+
+ */
 }

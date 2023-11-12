@@ -57,5 +57,11 @@ public class StoreService {
     public Store getStoreByAddress(String storeAddress){
         return jpaStoreRepository.getStoreByAddress(storeAddress);
     }
+
+    //추가
+    public List<Store> getStoresByCategoryId(int storeCategoryId) {
+        return jpaStoreRepository.getStoreByCategoryId(storeCategoryId);
+    }
+
 }
 
