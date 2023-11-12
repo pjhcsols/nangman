@@ -12,6 +12,7 @@ const JoinForm = () => {
 
     const onSubmit = () => {
         const data = {
+            userId : null,
             userEmail: email,
             password: pwd,
             userName : name,
@@ -19,20 +20,23 @@ const JoinForm = () => {
         };
         
         console.log(data);
-        axios.post('http://172.20.38.52:8080/users/signup', JSON.stringify(data), {
+        axios.post('http://172.20.38.97:8080/users/signup', JSON.stringify(data), {
           headers: {
             'Content-Type': 'application/json'
           }
         })
         .then(res=> {
-            const data = res.data
-            console.log(data.code)
-            console.log(data.message)
-            console.log(data.status)
-            history.push('/host/main');
+            const data = res.response
+            console.log(data)
+            // console.log(data.code)
+            // console.log(data.message)
+            // console.log(data.status)
+            history.push('/');
           })
         .catch(error => {
-            console.error(error);
+            console.error(error)
+            // console.log(error.response.data);
+            alert("아이디 또는 비밀번호가 틀렸습니다.");
           });
     };
     
@@ -65,7 +69,7 @@ const JoinForm = () => {
                 <div className="mb-3">
                     <label className="from-label">비밀번호를 입력하세요</label>
                     <div>
-                        <input value={pwd} onChange={handlePwdChange} className="login-pwd" type="password"/>
+                        <input value={pwd} onChange={handlePwdChange} className="login-pwd" type="password" placeholder='대/소문자와 특수문자 모두 포함하여야 합니다'/>
                     </div>
                 </div>
                 <div className="mb-3">

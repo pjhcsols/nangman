@@ -31,7 +31,7 @@ const LoginMode = () => {
                 호스트 사용자
               </button>
             </Link>
-            <Switch>
+            {/* <Switch>
               <Route
                 path="/user/login"
                 render={() => <LoginForm id={0} history={history} />}
@@ -40,7 +40,7 @@ const LoginMode = () => {
                 path="/host/login"
                 render={() => <LoginForm id={1} history={history} />}
               />
-            </Switch>
+            </Switch> */}
           </div>
         </div>
       </div>

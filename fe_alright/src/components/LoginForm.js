@@ -10,25 +10,28 @@ const LoginForm = () => {
 
     const onSubmit = () => {
         const data = {
-            email: email,
-            password: pwd
+            userEmail: email,
+            userPassword: pwd
         };
         
-        console.log(data);
-        axios.post('http://172.20.5.147:8080/users/signup', JSON.stringify(data), {
+        console.log(data)
+        axios.post('http://172.20.38.97:8080/users/login', JSON.stringify(data), {
           headers: {
             'Content-Type': 'application/json'
           }
         })
         .then(res=> {
-            const data = res.data
-            console.log(data.code)
-            console.log(data.message)
-            console.log(data.status)
+            //이메일, 토큰 받아야 함
+            const data = res
+            console.log(data.data)
+            // console.log(data.code)
+            // console.log(data.message)
+            // console.log(data.status)
             history.push('/host/main');
           })
         .catch(error => {
             console.error(error);
+            alert('아이디 비밀번호를 확인해주세요')
           });
     };
     
