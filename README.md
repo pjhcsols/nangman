@@ -3,7 +3,7 @@
 
 -> 카카오맵API를 이용해 아동들을 위한 공간 정보를 제공해 아동의 발달권 보장에 도움을 주려함.
 
-<시스템 아키텍처>
+#시스템 아키텍처
 ![해커톤시스템architecture](https://github.com/pjhcsols/nangman/assets/97275777/934e6ed9-e65b-49af-8a08-c220802bfe07)
 
 
