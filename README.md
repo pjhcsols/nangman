@@ -43,3 +43,42 @@ Test : 테스트 코드 추가/수정
 |                             [현수](https://github.com/)                             |                          [민수](https://github.com/)                          |
 
 <br><br><br>
+
+
+
+# 백엔드
+
+## 1. JWT 인증인가 token을 통한 로그인 기능 구현
+![image](https://github.com/pjhcsols/nangman/assets/110244523/8e8a025f-110f-4e4e-ac65-7848d80e23cd)
+<img width="1257" alt="인증인가" src="https://github.com/pjhcsols/nangman/assets/110244523/81a7d9b2-0638-4d0e-99d3-88162c3b4b17">
+
+JWT (JSON Web Token)
+인증에 필요한 정보들을 암호화시킨 토큰을 뜻한다.
+
+JWT 기반 인증 방식이란 Client가 Server에게 요청을 보낼 때 HTTP의 Header에 
+이전에 Server로부터 발급받은 JWT를 담아 보내고, 이를 기반으로 Server가 Client를 식별하는 방식을 뜻한다.
+클라이언트에서 패스워드를 통하지 않고 암호화된 token기반으로 로그인 성공여부를 파악하기때문에 보안성이 높다.
+
+
+## 1-1. Signature 구현
+header의 인코딩 값 + payload의 인코딩 값 + 서버의 key값 을 header에서 정의한 알고리즘으로 암호화한 것.
+이 때 서버의 key값이 유출되지 않는 이상 복호화할 수 없다.
+
+
+## 1-2. Client는 JWT를 저장하고, 이후 인증이 필요한 요청마다 Authorization Header에 Access token을 담아 보냄
+
+[' . '로 구분된 세 문자열인 Header, Payload, Signature로 이루어져있다.]
+Server는 발행했던 token과 Client로부터 받은 token의 일치여부를 확인한다 (인증).
+
+
+
+## 2.카테고리ID(1.노키즈존, 2.키즈존, 3.아동복합문화공간) 별로 데이터베이스를 통한 필터링 기능
+클라이언트 측에서 요청한 노키즈존, 키즈존, 아동복합문화공간을 카테고리ID 별로 필터링을 통해 원하는 정보를 전송해준다.
+<img width="1257" alt="스크린샷 2023-11-12 오후 11 44 52" src="https://github.com/pjhcsols/nangman/assets/110244523/1094f64c-7bf6-457a-9972-365dbc2a21df">
+
+
+
+## 3.Store Service를 통한 DB에 저장된 스토어 보기
+
+
+
