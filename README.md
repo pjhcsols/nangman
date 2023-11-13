@@ -79,6 +79,7 @@ Server는 발행했던 token과 Client로부터 받은 token의 일치여부를 
 
 
 ## 3.Store Service를 통한 DB에 저장된 스토어 보기
-
+클라이언트 측에서 요청한 모든 상점에 대한 정보를 json 형식으로 파싱하여 전송해준다.
+<img width="872" alt="image" src="https://github.com/pjhcsols/nangman/assets/97275777/1d6cbe59-dbe9-407e-8fca-7a81c4e46d62">
 
 
